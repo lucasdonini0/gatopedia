@@ -85,7 +85,6 @@ h3{
 
 /* ==================== ESTILOS DO MODAL ==================== */
 
-/* Esconde o modal por padrão */
 .modal {
     display: none;
     position: fixed;
@@ -174,7 +173,6 @@ h3{
     
 }
 
-/* Esconde o título da galeria (não o do modal) */
 .gallery .gatotitle {
     display: none;
 }
