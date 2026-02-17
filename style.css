@@ -38,6 +38,7 @@ h3{
 .gallery{
     display: inline-block;
     border: 1px solid black;
+    transition: all 0.3s ease; 
     margin: 5px;
     width: 400px;
     vertical-align: top;
@@ -80,4 +81,120 @@ h3{
 #gatopedia-title:hover{
     color: rgb(255, 14, 14);
     transition: color 0.5s ease-out;
+}
+
+/* ==================== ESTILOS DO MODAL ==================== */
+
+/* Esconde o modal por padrão */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Imagem dentro do modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Título sobreposto na imagem */
+.modal-title {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    max-width: 80%;
+    animation: slideUp 0.5s;
+}
+
+@keyframes slideUp {
+    from { 
+        bottom: 0;
+        opacity: 0;
+    }
+    to { 
+        bottom: 10%;
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+.gallery img {
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    
+}
+
+/* Esconde o título da galeria (não o do modal) */
+.gallery .gatotitle {
+    display: none;
+}
+
+/* Responsividade para mobile */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .modal-title {
+        font-size: 18px;
+        padding: 10px 20px;
+        max-width: 90%;
+    }
+    
+    .close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
 }
