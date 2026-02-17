@@ -1,6 +1,3 @@
-// modal.js
-
-// Pega o modal e seus elementos
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
 const modalTitle = document.getElementById('modalTitle');
